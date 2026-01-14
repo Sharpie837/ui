@@ -559,7 +559,7 @@ end
         function library:window(properties) 
             local cfg = {
                 name = properties.Name or properties.name or properties.Title or properties.title or "ledger.live", 
-                size = properties.Size or properties.size or dim2(0, 500, 0, 650)
+                size = properties.Size or properties.size or dim2(0, 500, 0, 550)
             }
             
             local animated_text = library:animation( cfg.name .. " | developer | uid 1") 
@@ -752,8 +752,8 @@ end
                     Name = "",
                     BorderColor3 = Color3.fromRGB(0, 0, 0),
                     BackgroundTransparency = 1,
-                    Position = UDim2.new(0, 16, 0, 25),
-                    Size = UDim2.new(1, -32, 0, 0),
+                    Position = UDim2.new(0, 16, 1, -26),
+                    Size = UDim2.new(1, -32, 0, 24),
                     ZIndex = 2,
                     BorderSizePixel = 0,
                     BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -774,9 +774,9 @@ end
                 local tab_inline = library:create("Frame", {
                     Parent = main,
                     Name = "",
-                    Position = UDim2.new(0, 15, 0, 50),
+                    Position = UDim2.new(0, 15, 0, 30),
                     BorderColor3 = Color3.fromRGB(19, 19, 19),
-                    Size = UDim2.new(1, -30, 1, -65),
+                    Size = UDim2.new(1, -30, 1, -60),
                     BorderSizePixel = 0,
                     BackgroundColor3 = Color3.fromRGB(19, 19, 19)
                 })
@@ -867,14 +867,14 @@ end
                     FontFace = library.font,
                     TextColor3 = Color3.fromRGB(150, 150, 150),
                     BorderColor3 = Color3.fromRGB(0, 0, 0),
-                    Text = "v0.2",
+                    Text = "v0.3",
                     TextStrokeTransparency = 0.5,
                     BorderSizePixel = 0,
                     BackgroundTransparency = 1,
-                    Position = UDim2.new(0, 6, 1, -16),
-                    Size = UDim2.new(0, 50, 0, 12),
+                    Position = UDim2.new(0, 6, 1, -12),
+                    Size = UDim2.new(0, 50, 0, 10),
                     ZIndex = 5,
-                    TextSize = 12,
+                    TextSize = 10,
                     TextXAlignment = Enum.TextXAlignment.Left,
                     BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 })
