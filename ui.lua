@@ -3367,8 +3367,8 @@ do
 					BorderColor3 = FromRGB(0, 0, 0),
 					Image = (tonumber(Window.Logo) and "rbxassetid://" .. Window.Logo) or Window.Logo,
 					BackgroundTransparency = 1,
-					Position = UDim2New(0, 8, 0, 10),
-					Size = UDim2New(0, 18, 0, 18),
+					Position = UDim2New(0, 8, 0, 7),
+					Size = UDim2New(0, 21, 0, 21),
 					BorderSizePixel = 0,
 					BackgroundColor3 = FromRGB(255, 0, 0),
 				})
@@ -3382,7 +3382,7 @@ do
 					local ContentSize = Logo.ContentImageSize
 					if ContentSize and ContentSize.X > 0 and ContentSize.Y > 0 then
 						local Aspect = ContentSize.X / ContentSize.Y
-						Logo.Size = UDim2New(0, 18 * Aspect, 0, 18)
+						Logo.Size = UDim2New(0, 21 * Aspect, 0, 21)
 					end
 				end)
 
@@ -3395,7 +3395,7 @@ do
 					Text = Window.Name,
 					Size = UDim2New(0, 0, 0, 15),
 					BackgroundTransparency = 1,
-					Position = UDim2New(0, 32, 0, 10),
+					Position = UDim2New(0, 36, 0, 10),
 					BorderSizePixel = 0,
 					AutomaticSize = Enum.AutomaticSize.X,
 					TextSize = 14,
@@ -3468,6 +3468,24 @@ do
 					Rotation = 90,
 					Transparency = NumSequence({ NumSequenceKeypoint(0, 0), NumSequenceKeypoint(1, 1) }),
 				})
+
+				Items["Version"] = Instances:Create("TextLabel", {
+					Parent = Items["Inline"].Instance,
+					Name = "\0",
+					FontFace = Library.Font,
+					TextColor3 = FromRGB(255, 255, 255),
+					BorderColor3 = FromRGB(0, 0, 0),
+					Text = "v0.1",
+					Size = UDim2New(0, 0, 0, 15),
+					BackgroundTransparency = 1,
+					TextTransparency = 0.5,
+					Position = UDim2New(0, 8, 1, -20),
+					BorderSizePixel = 0,
+					AutomaticSize = Enum.AutomaticSize.X,
+					TextSize = 12,
+					BackgroundColor3 = FromRGB(255, 255, 255),
+				})
+				Items["Version"]:AddToTheme({ TextColor3 = "Text" })
 
 				Window.Items = Items
 			end
