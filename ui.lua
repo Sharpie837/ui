@@ -752,7 +752,7 @@ end
                     Name = "",
                     BorderColor3 = Color3.fromRGB(0, 0, 0),
                     BackgroundTransparency = 1,
-                    Position = UDim2.new(0, 16, 0, 4),
+                    Position = UDim2.new(0, 16, 0, 25),
                     Size = UDim2.new(1, -32, 0, 0),
                     ZIndex = 2,
                     BorderSizePixel = 0,
@@ -774,9 +774,9 @@ end
                 local tab_inline = library:create("Frame", {
                     Parent = main,
                     Name = "",
-                    Position = UDim2.new(0, 15, 0, 33),
+                    Position = UDim2.new(0, 15, 0, 50),
                     BorderColor3 = Color3.fromRGB(19, 19, 19),
-                    Size = UDim2.new(1, -30, 1, -48),
+                    Size = UDim2.new(1, -30, 1, -65),
                     BorderSizePixel = 0,
                     BackgroundColor3 = Color3.fromRGB(19, 19, 19)
                 })
@@ -804,19 +804,20 @@ end
                 library:apply_theme(accent_line, "accent", "BackgroundColor3") 
                 
                 local name = library:create("TextLabel", {
-                    Parent = inline1,
+                    Parent = main,
                     Name = "",
                     FontFace = library.font,
-                    TextColor3 = Color3.fromRGB(170, 170, 170),
+                    TextColor3 = Color3.fromRGB(220, 220, 220),
                     BorderColor3 = Color3.fromRGB(0, 0, 0),
                     Text = cfg.name,
                     TextStrokeTransparency = 0.5,
                     BorderSizePixel = 0,
                     BackgroundTransparency = 1,
-                    Position = UDim2.new(0, 0, 0, -1),
-                    Size = UDim2.new(1, 0, 0, 1),
+                    Position = UDim2.new(0, 0, 0, 0),
+                    Size = UDim2.new(1, 0, 0, 25),
                     ZIndex = 2,
-                    TextSize = 12,
+                    TextSize = 16,
+                    TextXAlignment = Enum.TextXAlignment.Center,
                     BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 })
                 
@@ -858,7 +859,25 @@ end
                     ZIndex = 2,
                     AutomaticSize = Enum.AutomaticSize.XY,
                     BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-                })      
+                })
+                
+                local version = library:create("TextLabel", {
+                    Parent = inline1,
+                    Name = "",
+                    FontFace = library.font,
+                    TextColor3 = Color3.fromRGB(150, 150, 150),
+                    BorderColor3 = Color3.fromRGB(0, 0, 0),
+                    Text = "v0.1",
+                    TextStrokeTransparency = 0.5,
+                    BorderSizePixel = 0,
+                    BackgroundTransparency = 1,
+                    Position = UDim2.new(0, 6, 1, -16),
+                    Size = UDim2.new(0, 50, 0, 12),
+                    ZIndex = 5,
+                    TextSize = 12,
+                    TextXAlignment = Enum.TextXAlignment.Left,
+                    BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                })
 
                 task.spawn(function()
                     while true do 
@@ -2617,9 +2636,9 @@ end
                     Text = cfg.name,
                     TextStrokeTransparency = 0.5,
                     BackgroundTransparency = 1,
-                    Size = UDim2.new(0.3330000042915344, -4, 0, 22),
+                    Size = UDim2.new(0.3330000042915344, -4, 0, 26),
                     BorderSizePixel = 0,
-                    TextSize = 12,
+                    TextSize = 14,
                     BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 })
                 
@@ -2859,7 +2878,7 @@ end
                     TextXAlignment = Enum.TextXAlignment.Left,
                     Position = UDim2.new(0, 8, 0, 0),
                     ZIndex = 2,
-                    TextSize = 12,
+                    TextSize = 14,
                     BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 })
                 
@@ -3313,9 +3332,9 @@ end
                     BorderSizePixel = 0,
                     BackgroundTransparency = 1,
                     TextXAlignment = Enum.TextXAlignment.Left,
-                    Size = UDim2.new(1, -26, 0, 12),
+                    Size = UDim2.new(1, -26, 0, 16),
                     ZIndex = 1,
-                    TextSize = 12,
+                    TextSize = 14,
                     BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 })
                 
@@ -3343,7 +3362,7 @@ end
                     Name = "",
                     Position = UDim2.new(0, -15, 0, 1),
                     BorderColor3 = Color3.fromRGB(19, 19, 19),
-                    Size = UDim2.new(0, 10, 0, 10),
+                    Size = UDim2.new(0, 14, 0, 14),
                     BorderSizePixel = 0,
                     Text = "", 
                     AutoButtonColor = false, 
@@ -3468,13 +3487,13 @@ end
                     BorderColor3 = Color3.fromRGB(0, 0, 0),
                     Text = cfg.name,
                     TextStrokeTransparency = 0.5,
-                    Size = UDim2.new(1, -26, 0, 12),
+                    Size = UDim2.new(1, -26, 0, 16),
                     BorderSizePixel = 0,
                     BackgroundTransparency = 1,
                     TextXAlignment = Enum.TextXAlignment.Left,
                     AutomaticSize = Enum.AutomaticSize.Y,
                     TextYAlignment = Enum.TextYAlignment.Top,
-                    TextSize = 12,
+                    TextSize = 14,
                     BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 })
                 
@@ -3590,9 +3609,9 @@ end
                 TextStrokeTransparency = 0.5,
                 BackgroundTransparency = 1,
                 Position = UDim2.new(1, -20, 0, 3),
-                Size = UDim2.new(0, 12, 0, 8),
+                Size = UDim2.new(0, 14, 0, 10),
                 FontFace = library.font,
-                TextSize = 10,
+                TextSize = 12,
                 BackgroundColor3 = Color3.fromRGB(38, 38, 38)
             })
             
@@ -3606,9 +3625,9 @@ end
                 TextStrokeTransparency = 0.5,
                 BackgroundTransparency = 1,
                 Position = UDim2.new(1, -35, 0, 3),
-                Size = UDim2.new(0, 12, 0, 8),
+                Size = UDim2.new(0, 14, 0, 10),
                 FontFace = library.font,
-                TextSize = 10,
+                TextSize = 12,
                 BackgroundColor3 = Color3.fromRGB(38, 38, 38)
             })
             
@@ -3700,14 +3719,14 @@ end
                     BorderColor3 = Color3.fromRGB(0, 0, 0),
                     Text = cfg.name,
                     TextStrokeTransparency = 0.5,
-                    Size = UDim2.new(1, -26, 0, 12),
+                    Size = UDim2.new(1, -26, 0, 16),
                     BorderSizePixel = 0,
                     ZIndex = 2,
                     BackgroundTransparency = 1,
                     TextXAlignment = Enum.TextXAlignment.Left,
                     AutomaticSize = Enum.AutomaticSize.Y,
                     TextYAlignment = Enum.TextYAlignment.Top,
-                    TextSize = 12,
+                    TextSize = 14,
                     BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 })
                 
