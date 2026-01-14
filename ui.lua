@@ -2861,19 +2861,46 @@ end
                     BorderColor3 = Color3.fromRGB(19, 19, 19),
                     Size = UDim2.new(1, 0, 1, -4),
                     BorderSizePixel = 0,
-                    BackgroundColor3 = Color3.fromRGB(8, 8, 8)
+                    BackgroundColor3 = Color3.fromRGB(35, 35, 35) -- Outline color
                 })
                 
-                local name = library:create("TextLabel", {
+                local inner = library:create("Frame", {
                     Parent = section_inline,
                     Name = "",
+                    Position = UDim2.new(0, 1, 0, 1),
+                    Size = UDim2.new(1, -2, 1, -2),
+                    BackgroundColor3 = Color3.fromRGB(22, 22, 22),
+                    BorderSizePixel = 0
+                })
+                
+                local header = library:create("Frame", {
+                    Parent = inner,
+                    Name = "",
+                    Position = UDim2.new(0, 0, 0, 0),
+                    Size = UDim2.new(1, 0, 0, 24),
+                    BackgroundColor3 = Color3.fromRGB(32, 32, 32),
+                    BorderSizePixel = 0
+                })
+                
+                local separator = library:create("Frame", {
+                    Parent = header,
+                    Name = "",
+                    Position = UDim2.new(0, 0, 1, 0),
+                    Size = UDim2.new(1, 0, 0, 1),
+                    BackgroundColor3 = Color3.fromRGB(45, 45, 45),
+                    BorderSizePixel = 0
+                })
+
+                local name = library:create("TextLabel", {
+                    Parent = header,
+                    Name = "",
                     FontFace = library.font,
-                    TextColor3 = Color3.fromRGB(170, 170, 170),
+                    TextColor3 = Color3.fromRGB(220, 220, 220),
                     BorderColor3 = Color3.fromRGB(0, 0, 0),
                     Text = cfg.name,
                     TextStrokeTransparency = 0.5,
                     BorderSizePixel = 0,
-                    Size = UDim2.new(1, 0, 0, 1),
+                    Size = UDim2.new(1, -16, 1, 0),
                     BackgroundTransparency = 1,
                     TextXAlignment = Enum.TextXAlignment.Left,
                     Position = UDim2.new(0, 8, 0, 0),
@@ -2882,22 +2909,14 @@ end
                     BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 })
                 
-                local section = library:create("Frame", {
-                    Parent = section_inline,
-                    Name = "",
-                    Position = UDim2.new(0, 2, 0, 2),
-                    BorderColor3 = Color3.fromRGB(56, 56, 56),
-                    Size = UDim2.new(1, -4, 1, -4),
-                    BackgroundColor3 = Color3.fromRGB(22, 22, 22)
-                })
-                
                 local elements = library:create("Frame", {
-                    Parent = section,
+                    Parent = inner,
                     Name = "",
-                    Position = UDim2.new(0, 12, 0, 12),
+                    Position = UDim2.new(0, 12, 0, 32),
                     BorderColor3 = Color3.fromRGB(0, 0, 0),
                     Size = UDim2.new(1, -24, 0, 0),
                     BorderSizePixel = 0,
+                    BackgroundTransparency = 1,
                     BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 })
                 
@@ -2910,7 +2929,7 @@ end
                 })
                 
                 local UIPadding = library:create("UIPadding", {
-                    Parent = section,
+                    Parent = inner,
                     Name = "",
                     PaddingBottom = UDim.new(0, 13)
                 })    
