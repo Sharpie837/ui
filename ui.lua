@@ -867,7 +867,7 @@ end
                     FontFace = library.font,
                     TextColor3 = Color3.fromRGB(150, 150, 150),
                     BorderColor3 = Color3.fromRGB(0, 0, 0),
-                    Text = "v0.1",
+                    Text = "v0.2",
                     TextStrokeTransparency = 0.5,
                     BorderSizePixel = 0,
                     BackgroundTransparency = 1,
