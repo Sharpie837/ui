@@ -1,3 +1,6 @@
+-- Hi finobe here, this got leaked cuz i had a polish nazi (??) customer who tried leaking personal info about me for whatever reason??
+-- Anyways I fixed the code up so if you're using the other one on my github then use this one instead
+
 -- Variables 
     local uis = game:GetService("UserInputService") 
     local players = game:GetService("Players") 
@@ -85,9 +88,9 @@
             text = rgb(200, 200, 200),
             text_outline = rgb(0, 0, 0),
             background = rgb(18, 18, 18),
-            ["1"] = rgb(255, 140, 0), -- Orange
-            ["2"] = rgb(255, 120, 0), -- Darker orange
-            ["3"] = rgb(255, 100, 0), -- Even darker orange
+            ["1"] = rgb(255, 140, 0), -- Orange accent only
+            ["2"] = rgb(255, 140, 0), -- Orange accent only
+            ["3"] = rgb(255, 140, 0), -- Orange accent only
         },
 
         utility = {
@@ -543,7 +546,7 @@
                     BorderColor3 = rgb(0, 0, 0);
                     Size = cfg.size;
                     BorderSizePixel = 0;
-                    BackgroundColor3 = rgb(255, 255, 255)
+                    BackgroundColor3 = themes.preset["1"] -- Orange border
                 });
                 window_outline.Position = dim2(0, window_outline.AbsolutePosition.Y, 0, window_outline.AbsolutePosition.Y)
                 cfg.main_outline = window_outline
@@ -551,12 +554,22 @@
                 library:resizify(window_outline)
                 library:draggify(window_outline)
                 
-                local title_holder = library:create("Frame", {
+                -- Black background inside
+                local window_background = library:create("Frame", {
                     Parent = window_outline;
-                    BackgroundTransparency = 0.800000011920929;
                     Position = dim2(0, 2, 0, 2);
                     BorderColor3 = rgb(0, 0, 0);
-                    Size = dim2(1, -4, 0, 20);
+                    Size = dim2(1, -4, 1, -4);
+                    BorderSizePixel = 0;
+                    BackgroundColor3 = rgb(18, 18, 18)
+                });
+                
+                local title_holder = library:create("Frame", {
+                    Parent = window_background;
+                    BackgroundTransparency = 0.800000011920929;
+                    Position = dim2(0, 0, 0, 0);
+                    BorderColor3 = rgb(0, 0, 0);
+                    Size = dim2(1, 0, 0, 20);
                     BorderSizePixel = 0;
                     BackgroundColor3 = rgb(0, 0, 0)
                 });
@@ -574,22 +587,13 @@
                     BackgroundColor3 = rgb(255, 255, 255)
                 });
                 
-                library.gradient = library:create("UIGradient", {
-                    Color = rgbseq{
-                        rgbkey(0, themes.preset["1"]), 
-                        rgbkey(0.5, themes.preset["2"]),
-                        rgbkey(1, themes.preset["3"]),
-                    };
-                    Parent = window_outline
-                });
-                
                 local tab_button_holder = library:create("Frame", {
                     AnchorPoint = vec2(0, 1);
-                    Parent = window_outline;
+                    Parent = window_background;
                     BackgroundTransparency = 0.800000011920929;
-                    Position = dim2(0, 2, 1, -2);
+                    Position = dim2(0, 1, 1, 0);
                     BorderColor3 = rgb(0, 0, 0);
-                    Size = dim2(1, -4, 0, 20);
+                    Size = dim2(1, 0, 0, 20);
                     BorderSizePixel = 0;
                     BackgroundColor3 = rgb(0, 0, 0)
                 }); cfg.tab_button_holder = tab_button_holder
@@ -636,11 +640,11 @@
 
                 -- Page
                     local Page = library:create("Frame", {
-                        Parent = self.main_outline;
-                        BackgroundTransparency = 0.6;
-                        Position = dim2(0, 2, 0, 24);
+                        Parent = window_background;
+                        BackgroundTransparency = 1;
+                        Position = dim2(0, 0, 0, 22);
                         BorderColor3 = rgb(0, 0, 0);
-                        Size = dim2(1, -4, 1, -48);
+                        Size = dim2(1, 0, 1, -42);
                         BorderSizePixel = 0;
                         BackgroundColor3 = rgb(0, 0, 0),
                         Visible = false,
@@ -648,19 +652,17 @@
                     
                     library:create("UIListLayout", {
                         FillDirection = Enum.FillDirection.Horizontal;
-                        HorizontalFlex = Enum.UIFlexAlignment.Fill;
                         Parent = Page;
-                        Padding = dim(0, 2);
+                        Padding = dim(0, 5);
                         SortOrder = Enum.SortOrder.LayoutOrder;
-                        VerticalFlex = Enum.UIFlexAlignment.Fill
                     });
                     
                     library:create("UIPadding", {
-                        PaddingTop = dim(0, 2);
-                        PaddingBottom = dim(0, 2);
+                        PaddingTop = dim(0, 5);
+                        PaddingBottom = dim(0, 5);
                         Parent = Page;
-                        PaddingRight = dim(0, 2);
-                        PaddingLeft = dim(0, 2)
+                        PaddingRight = dim(0, 5);
+                        PaddingLeft = dim(0, 5)
                     });
                 -- 
             -- 
