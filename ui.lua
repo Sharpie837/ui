@@ -1,6 +1,3 @@
--- Hi finobe here, this got leaked cuz i had a polish nazi (??) customer who tried leaking personal info about me for whatever reason??
--- Anyways I fixed the code up so if you're using the other one on my github then use this one instead
-
 -- Variables 
     local uis = game:GetService("UserInputService") 
     local players = game:GetService("Players") 
@@ -84,13 +81,13 @@
     local themes = {
         preset = {
             outline = rgb(10, 10, 10),
-            inline = rgb(35, 35, 35),
-            text = rgb(180, 180, 180),
+            inline = rgb(25, 25, 25),
+            text = rgb(200, 200, 200),
             text_outline = rgb(0, 0, 0),
-            background = rgb(20, 20, 20),
-            ["1"] = hex("#245771"), 
-            ["2"] = hex("#215D63"),
-            ["3"] = hex("#1E6453"),
+            background = rgb(18, 18, 18),
+            ["1"] = rgb(255, 140, 0), -- Orange
+            ["2"] = rgb(255, 120, 0), -- Darker orange
+            ["3"] = rgb(255, 100, 0), -- Even darker orange
         },
 
         utility = {
@@ -1007,12 +1004,6 @@
                     AutomaticSize = Enum.AutomaticSize.Y;
                     TextSize = 12;
                     BackgroundColor3 = rgb(255, 255, 255)
-                });
-                
-                library:create("UIListLayout", {
-                    Parent = ScrollingFrame;
-                    Padding = dim(0, 5);
-                    SortOrder = Enum.SortOrder.LayoutOrder
                 });
             --
 
