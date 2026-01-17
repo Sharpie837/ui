@@ -908,7 +908,7 @@
         function library:column(properties)
             self.count += 1
 
-            local cfg = {color = library.gradient.Color.Keypoints[self.count].Value, count = self.count} 
+            local cfg = {color = themes.preset[tostring(self.count)], count = self.count} 
 
             local scrolling_frame = library:create("ScrollingFrame", {
                 ScrollBarImageColor3 = rgb(0, 0, 0);
